@@ -11,10 +11,7 @@ var flash = require('connect-flash');
 
 var usersController = require('./controllers/users');
 
-var serverConfig = require('./server-config.json');
-
-//default web server port to 80
-serverConfig.web.port = serverConfig.web.port || 80;
+var port = process.env.PORT || 3000;
 
 var app = express();
 app.use(morgan('dev'));
@@ -70,6 +67,6 @@ var apiControllers = require('./controllers/api-controllers');
 app.use('/api', apiControllers.Router());
 app.use(apiControllers.apiErrorHandler);
 
-app.listen(serverConfig.web.port, function() {
-    console.log('listening for requests on http://localhost:' + serverConfig.web.port);
+app.listen(port, function() {
+    console.log('listening for requests on http://localhost:' + port);
 });
