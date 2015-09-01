@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="js/home.js"></script>
+</head>
+<body class="container" ng-app="home" ng-controller="HomeController">
+    <h1>Secured Home Page</h1>
+
+    <p ng-if="error" class="alert alert-danger">{{error.message}}</p>
+
+    <p>You are <strong>{{user.name}}</strong>.</p>
+    <p ng-if="user._realUser">
+        But you are impersonating that user.
+        You are really <strong>{{user._realUser.name}}</strong>
+    </p>
+
+    <p>
+        <a class="btn btn-default" href="/logout">Sign Out</a>
+        <button ng-if="user.role >= roles.admin" type="button" class="btn btn-default" ng-click="impersonate()">
+            Impersonate Student
+        </button>
+        <button ng-if="user._realUser" type="button" class="btn btn-default" ng-click="stopImpersonating()">
+            Stop Impersonating
+        </button>
+    </p>
+</body>
+</html>

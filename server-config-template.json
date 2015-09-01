@@ -1,0 +1,11 @@
+{
+  "web": {
+    "port": 8000
+  },
+  "db": {
+    "host": "",
+    "database": "",
+    "user": "",
+    "password": ""
+  }
+}

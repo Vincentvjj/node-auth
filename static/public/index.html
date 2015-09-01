@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+</head>
+<body class="container">
+    <h1>Sign In</h1>
+    <form action="/login" method="post" class="form">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"
+                   placeholder="type 'admin' or 'student'" class="form-control" autofocus/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password (type anything):</label>
+            <input type="password" id="password" name="password" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </div>
+    </form>
+</body>
+</html>
